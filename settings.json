@@ -1,0 +1,31 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\Marek\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 1,
+    "terminal.integrated.env.windows": {
+    
+    },
+    "workbench.editor.enablePreview": false,
+    "editor.linkedEditing": true,    
+    "workbench.iconTheme": "material-icon-theme",
+    "html.autoClosingTags": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },  
+    "files.associations": {
+        "**/templates/*.html": "django-html",
+        "**/*.html": "html"
+    },
+    "beautify.language": {
+        "html": ["htm", "html", "django-html"]
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+    },
+}
