@@ -2,30 +2,88 @@
     "python.defaultInterpreterPath": "C:\\Users\\Marek\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
     "editor.wordWrap": "on",
     "window.zoomLevel": 1,
-    "terminal.integrated.env.windows": {
-    
-    },
+    "terminal.integrated.env.windows": {},
     "workbench.editor.enablePreview": false,
-    "editor.linkedEditing": true,    
+    "editor.linkedEditing": true,
     "workbench.iconTheme": "material-icon-theme",
     "html.autoClosingTags": false,
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.formatOnSave": true,
     "emmet.includeLanguages": {
         "django-html": "html"
-    },  
+    },
     "files.associations": {
         "**/templates/*.html": "django-html",
         "**/*.html": "html"
     },
     "beautify.language": {
-        "html": ["htm", "html", "django-html"]
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
     },
     "[django-html]": {
         "editor.defaultFormatter": "HookyQR.beautify",
         "editor.formatOnSave": true,
         "editor.tabSize": 2
     },
+    "html.format.enable": false,
+    /** Spelling **/
+/** Taken from: https://www.coderedcorp.com/blog/spell-check-vscode/ **/
+
+// Only spell check the following file types, ignore all others.
+"spellright.documentTypes": [
+    "markdown",
+    "restructuredtext",
+    "latex",
+    "plaintext",
+    "html",
+    "django-html",
+],
+
+// Within those file types, ignore the following sections.
+"spellright.ignoreRegExps": [
+    // ignore code blocks (surrounded by at least one backtick)
+    "/`+([\\s\\S\\w\\W]+?)`+/g",
+    // ignore code blocks (rst double colon)
+    "/::\\n\\n([\\s\\S\\w\\W]+?)(?=\\n\\S)/g",
+    // ignore code-blocks (rst double period)
+    "/\\.\\. code\\-block::[\\s\\w]*\\n\\n([\\s\\S\\w\\W]+?)(?=\\n\\S)/g",
+    // ignore string assignment (e.g. HTML tag properties)
+    "/\\w+\\s*\\=+\\s*[\"\\']+.+[\"\\']+/g"
+],
+
+// Within HTML files specifically
+"spellright.ignoreRegExpsByClass": {
+    "django-html": [
+        // ignore Django/Jinja template tags
+        "/\\{[\\{\\%\\#].+[\\#\\%\\}]\\}/g",
+        // ignore script tag contents
+        "/<script.*?>([\\s\\S\\w\\W]*?)</script>/g",
+        // ignore style tag contents
+        "/<style>([\\s\\S\\w\\W]*?)</style>/g",
+        // ignore actual HTML tags, but not the contents.
+        "/<[\\s\\S\\w\\W]+?>/g"
+    ],
+    "html": [
+        // ignore Django/Jinja template tags
+        "/\\{[\\{\\%\\#].+[\\#\\%\\}]\\}/g",
+        // ignore script tag contents
+        "/<script.*?>([\\s\\S\\w\\W]*?)</script>/g",
+        // ignore style tag contents
+        "/<style>([\\s\\S\\w\\W]*?)</style>/g",
+        // ignore actual HTML tags, but not the contents.
+        "/<[\\s\\S\\w\\W]+?>/g"
+    ]
+},
+
+// Never check the following file extensions, even if VS Code thinks they are plaintext.
+"spellright.ignoreFiles": [
+    "**/.gitignore",
+    "**/.spellignore",
+    "*.toml"
+],
 }
